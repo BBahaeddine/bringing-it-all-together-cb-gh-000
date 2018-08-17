@@ -71,6 +71,7 @@ class Dog
         dog = Dog.new({:name => args[:name],
           :breed => args[:breed]
         })
+        dog.id = res[0][0]
         dog
       else
         self.create(args)
