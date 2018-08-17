@@ -62,10 +62,11 @@ class Dog
     sql = <<-SQL 
       SELECT * FROM dogs WHERE name = ?
     SQL
-    res = DB[:conn].execute(sql, args[:name], args[:breed])
+    res = DB[:conn].execute(sql, args[:name])
     if res.empty?
       self.create(args)
     else
+      # dog = Dog.new(args)
       if res[0][2] == args[:breed]
       else
       end
