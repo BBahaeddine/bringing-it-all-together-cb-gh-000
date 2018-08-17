@@ -68,7 +68,12 @@ class Dog
     else
       # dog = Dog.new(args)
       if res[0][2] == args[:breed]
+        dog = Dog.new({:name => args[:name],
+          :breed => args[:breed]
+        })
+        dog
       else
+        self.create(args)
       end
       
     end
